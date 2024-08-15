@@ -1,9 +1,28 @@
 {
 	"version": 2,
-	"rewrites": [
+	"builds": [
 		{
-			"source": "/(.*)",
-			"destination": "/api"
+			"src": "src/index.ts",
+			"use": "@vercel/node",
+			"config": {
+				"includeFiles": [
+					"dist/**/*",
+					"package.json",
+					"tsconfig.json"
+				],
+				"maxLambdaSize": "50mb"
+			}
 		}
-	]
+	],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"dest": "/dist/index.js"
+		}
+	],
+	"functions": {
+		"api/**.ts": {
+			"maxDuration": 10
+		}
+	}
 }
