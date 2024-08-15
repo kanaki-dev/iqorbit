@@ -1,4 +1,4 @@
-import { IApiError, IApiResponse } from "./types";
+import { IApiError, IApiResponse } from "./types.js";
 
 export class ApiResponse implements IApiResponse {
   public statusCode: number;

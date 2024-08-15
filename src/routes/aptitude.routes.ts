@@ -4,7 +4,7 @@ import {
   getAptitudeTopics,
   getRandomTopics,
   gettopicAptitude,
-} from "../controllers/aptitude.controllers";
+} from "../controllers/aptitude.controllers.js";
 const router: Router = Router();
 
 router.route("/all").get(getAllAptitude);

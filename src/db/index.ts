@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import { DB_NAME } from "../lib/constant";
-import { env } from "../lib/envConfig";
+import { DB_NAME } from "../lib/constant.js";
+import { env } from "../lib/envConfig.js";
 
 type Mongoose = typeof mongoose;
 

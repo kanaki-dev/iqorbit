@@ -13,8 +13,8 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 
 // roues import
-import { ApiError, ApiResponse } from "./lib/utils";
-import aptitudeRoute from "./routes/aptitude.routes";
+import { ApiError, ApiResponse } from "./lib/utils.js";
+import aptitudeRoute from "./routes/aptitude.routes.js";
 
 // routes declaration
 app.use("/", (req: Request, res: Response) => {

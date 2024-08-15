@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { ApiError, ApiResponse } from "../lib/utils";
-import { Aptitudes } from "../models/aptitude.models";
-import { IAptitude } from "../lib/types";
+import { ApiError, ApiResponse } from "../lib/utils.js";
+import { Aptitudes } from "../models/aptitude.models.js";
+import { IAptitude } from "../lib/types.js";
 
 type GlobalCache = {
   [key: string]: any;

@@ -1,36 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // Modern ECMAScript target, adjust as needed
-    "module": "ESNext", // Use ESNext for ECMAScript modules
-    "strict": true, // Enable strict type-checking options
-    "esModuleInterop": true, // Interoperability between CommonJS and ES Modules
-    "skipLibCheck": true, // Skip type checking of declaration files
-    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
-    "outDir": "./dist", // Output directory for compiled files
-    "rootDir": "./src", // Root directory of your source files
-    "resolveJsonModule": true, // Allow importing .json files
-    "moduleResolution": "node", // Use Node.js module resolution
-    "typeRoots": [
-      "./node_modules/@types"
-    ], // Specify type definitions
-    "allowJs": true, // Allow JavaScript files to be compiled
-    "noImplicitAny": true, // Raise error on implied `any` type
-    "noUnusedLocals": true, // Report errors on unused locals
-    // "noUnusedParameters": true, // Report errors on unused parameters
-    "noImplicitReturns": true, // Report errors when not all code paths in function return a value
-    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements
-    "moduleDetection": "force", // Ensure that TypeScript treats your files as modules
-    "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export
-  },
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
+    "target": "es2016",
+    "module": "NodeNext",
+    "moduleResolution": "Node16",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
   },
   "include": [
-    "src/**/*.ts"
-  ], // Include TypeScript files from src directory
+    "src/**/*"
+  ],
   "exclude": [
-    "node_modules",
-    "dist"
-  ] // Exclude node_modules and dist directories
+    "node_modules"
+  ]
 }
