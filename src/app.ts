@@ -17,12 +17,14 @@ import { ApiError, ApiResponse } from "./lib/utils.js";
 import aptitudeRoute from "./routes/aptitude.routes.js";
 
 // routes declaration
+
+app.use("/api/v1/ambitionbox", aptitudeRoute);
+
 app.use("/", (req: Request, res: Response) => {
   res.status(200).send(new ApiResponse(200, {
     msg: "Wellcome to the amazing Aptitude API"
   }));
 });
-app.use("/api/v1/ambitionbox", aptitudeRoute);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   return res.status(404).send(new ApiError(404, "API endpoint not found"));
