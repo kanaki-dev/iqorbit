@@ -1,7 +1,7 @@
 import express, {
-    NextFunction,
-    Request,
-    Response
+  NextFunction,
+  Request,
+  Response
 } from "express";
 
 export const app = express();
@@ -13,10 +13,15 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 
 // roues import
-import { ApiError } from "./lib/utils";
+import { ApiError, ApiResponse } from "./lib/utils";
 import aptitudeRoute from "./routes/aptitude.routes";
 
 // routes declaration
+app.use("/", (req: Request, res: Response) => {
+  res.status(200).send(new ApiResponse(200, {
+    msg: "Wellcome to the amazing Aptitude API"
+  }));
+});
 app.use("/api/v1/ambitionbox", aptitudeRoute);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
