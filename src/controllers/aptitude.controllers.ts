@@ -44,12 +44,18 @@ export async function getAllAptitude(req: Request, res: Response) {
     allAptitude = await Aptitudes.find({});
   }
 
+  
+  const result = [...allAptitude].map((doc, idx) => ({
+    ...doc,
+    _id: idx + 1
+  }))
+
   return res
     .status(200)
     .send(
       new ApiResponse(
         200,
-        { length: allAptitude?.length, aptitudes: allAptitude },
+        { length: result?.length, aptitudes: result },
         "All user been send"
       )
     );
@@ -116,12 +122,17 @@ export async function getRandomTopics(req: Request, res: Response) {
     { $project: { randomField: 0 } },
   ]);
 
+  const result = [...allAptitude].map((doc, idx) => ({
+    ...doc,
+    _id: idx + 1
+  }))
+
   return res
     .status(200)
     .send(
       new ApiResponse(
         200,
-        { length: allAptitude?.length, aptitudes: allAptitude },
+        { length: result?.length, aptitudes: result },
         "All user been send"
       )
     );
